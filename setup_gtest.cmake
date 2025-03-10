@@ -15,7 +15,7 @@ function(setup_gtest)
 
   include(GoogleTest)
 
-  file(GLOB test_sources tests/*.cpp)
+  file(GLOB test_sources CONFIGURE_DEPENDS tests/*.cpp)
   foreach(test_source IN LISTS test_sources)
     block()
       get_filename_component(file_name "${test_source}" NAME_WLE)
